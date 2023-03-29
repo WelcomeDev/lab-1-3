@@ -1,4 +1,4 @@
-import { TextBox } from '../textBox/textBox';
+import { TextBox } from '@ws-serenity/react-text-inputs';
 import Search from '../../assets/search.svg';
 import './searchInput.scss';
 import { InputHTMLAttributes } from 'react';
@@ -10,7 +10,7 @@ export function SearchInput({ onChange, value }: SearchInputProps) {
     return (
         <TextBox
             leftIcon={<Search/>}
-            className={clsx('search-input', 'desktop-body-1--secondary')}
+            className={clsx('search-input', 'blog-body--secondary')}
             placeholder={'Поиск'}
             onChange={onChange}
             value={value}

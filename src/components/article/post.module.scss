@@ -1,0 +1,23 @@
+@import 'src/styles/index';
+
+.post {
+  @include flex(72px);
+
+  padding: 0 128px;
+  justify-content: space-between;
+
+  &__article-wrapper,
+  &__content {
+    max-width: 840px;
+  }
+
+  &__header,
+  &__content {
+    @include column-flex(16px)
+  }
+
+  &__article-wrapper {
+    @include column-flex(32px);
+  }
+
+}

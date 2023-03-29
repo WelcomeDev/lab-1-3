@@ -1,9 +1,7 @@
 @import './styles/index';
 
-.app-wrapper {
+.blog-index {
   @include column-flex(32px);
-
-  height: 100%;
 
   &__header, &__body {
     @include center-by-margin;

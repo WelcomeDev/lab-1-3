@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import { useDebounce } from '../lib/useDebounce';
+import { useDebounce } from '@ws-serenity/react-hooks';
 import { blogList } from '../data/blogList';
-
-console.log(blogList)
 
 export function useOnSearch() {
     const [ searchValue, setSearchValue ] = useState('');
@@ -17,7 +15,6 @@ export function useOnSearch() {
 
     function onSearch(value: string) {
         setSearchValue(value);
-        console.log(value)
         debounceSearch(value);
     }
 

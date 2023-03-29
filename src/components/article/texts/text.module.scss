@@ -1,0 +1,49 @@
+@import 'src/styles/index';
+
+$textStyleArray: (
+                ('heading-1', 0),
+                ('heading-2', 12),
+                ('heading-3', 8),
+                ('heading-4', 4),
+                ('marker', 0),
+                ('paragraph', 0),
+                ('caption', 0)
+);
+
+@each $name, $offset, $use-margin in $textStyleArray {
+  .#{$name} {
+    @if ($use-margin) {
+      margin-top: #{$offset}px;
+    } @else {
+      padding-top: #{$offset}px;
+    }
+  }
+}
+
+.marker, .code-block {
+  @include with-small-border-radius;
+
+  background-color: $blog-background-2;
+}
+
+.marker {
+  padding: 4px;
+  display: block;
+  width: fit-content;
+}
+
+.code-block__wrapper {
+  @include vertical-offset(12px);
+}
+
+.code-block {
+  @include custom-scrollbar('float');
+
+  display: block;
+  overflow: auto;
+  padding: 16px;
+
+  code {
+    padding: unset;
+  }
+}

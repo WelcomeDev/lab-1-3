@@ -2,6 +2,25 @@
   border-radius: 6px;
 }
 
+@mixin with-small-border-radius() {
+  border-radius: 4px;
+}
+
+@mixin horizontal-padding($left, $right:false) {
+  padding-top: $left;
+  padding-bottom: if($right, $right, $left);
+}
+
+@mixin vertical-offset($top, $bottom:false, $use-margin:false) {
+  @if ($use-margin) {
+    margin-top: $top;
+    margin-bottom: if($bottom, $bottom, $top);
+  } @else {
+    padding-top: $top;
+    padding-bottom: if($bottom, $bottom, $top);
+  }
+}
+
 @mixin stretch-screen() {
   position: absolute;
   top: 0;
@@ -53,4 +72,8 @@
   max-width: $size;
   min-height: $size;
   max-height: $size;
+}
+
+@mixin max-rounding(){
+  border-radius: 9999px;
 }

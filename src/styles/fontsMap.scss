@@ -1,7 +1,13 @@
 @import 'fontsMapRaw';
 @import './colors/map';
 
-$fonts: 'desktop-subtitle', 'desktop-body-1', 'mobile-body-1', 'desktop-h1';
+$fonts: 'blog-h1',
+'blog-h2',
+'blog-h3',
+'blog-h4',
+'blog-body',
+'blog-subtitle',
+'blog-caption';
 
 @each $font in $fonts {
   .#{$font} {
@@ -31,6 +37,10 @@ $fonts: 'desktop-subtitle', 'desktop-body-1', 'mobile-body-1', 'desktop-h1';
       color: $blog-primary;
     }
   }
+}
+
+.bold {
+  font-weight: 700;
 }
 
 //.desktop-subtitle {

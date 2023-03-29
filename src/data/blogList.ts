@@ -4,6 +4,7 @@ export interface BlogListItemModel {
     coverUrl: string;
     description: string;
     publishedAt: Date;
+    slug: string;
     project: {
         title: string;
         coverUrl: string;
@@ -31,6 +32,7 @@ function duplicate(amount: number) {
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet.',
             coverUrl: 'https://memepedia.ru/wp-content/uploads/2016/03/hide-the-pain-harold.jpg',
             publishedAt: '03/29/2023',
+            slug: 'skynet',
             project: mockProject1,
         },
         {
@@ -38,6 +40,7 @@ function duplicate(amount: number) {
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. ',
             coverUrl: 'https://avatars.dzeninfra.ru/get-zen_doc/2815454/pub_5eca38798ab0d465106a38a9_5eca38e0564da33d1c6c2419/scale_1200',
             publishedAt: '03/23/2023',
+            slug: 'ali',
             project: mockProject2,
         },
     ];

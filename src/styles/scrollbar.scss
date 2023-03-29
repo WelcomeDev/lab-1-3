@@ -1,0 +1,52 @@
+@import 'colors/map';
+@import 'mixins';
+
+$default-width: 8px;
+$thin-margin-right: 6px;
+$thin-result-width: $default-width + $thin-margin-right;
+$widths: ('default':$default-width, 'float':$thin-result-width);
+
+// types: 'default', 'float'
+@mixin custom-scrollbar($type:'default') {
+  // noinspection CssUnknownProperty
+  //scrollbar-color: $grayscale-content-3 $grayscale-line;
+  scrollbar-color: red blue;
+  // noinspection CssUnknownProperty
+  scrollbar-width: thin;
+
+  $size: map-get($widths, $type);
+
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-track {
+    @if ($type == 'default') {
+      @include max-rounding;
+
+      background-color: blue;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @include max-rounding;
+
+    background-clip: padding-box;
+    background-color: red;
+
+    @if ($type == 'float') {
+      border: calc(#{$thin-margin-right} / 2) solid rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+@mixin hide-scrollbar {
+  -ms-overflow-style: none;
+  // noinspection CssUnknownProperty
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

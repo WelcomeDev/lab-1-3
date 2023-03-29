@@ -1,6 +1,4 @@
 import { Header } from './components/header/header';
-import clsx from 'clsx';
-import './styles/colors/blog.scss';
 import s from './app.module.scss';
 import { BlogListItem } from './components/blogListItem/blogListItem';
 import { SearchInput } from './components/searchInput/searchInput';
@@ -11,17 +9,17 @@ function App() {
     const { items, onSearch, searchValue } = useOnSearch();
 
     return (
-        <div className={clsx(s['app-wrapper'], 'theme')}>
-            <Header className={s['app-wrapper__header']}/>
-            <main className={s['app-wrapper__body']}>
-                <div className={s['app-wrapper__search']}>
-                    <h1 className={'desktop-h1--primary'}>Все статьи</h1>
+        <div className={s['blog-index']}>
+            <Header className={s['blog-index__header']}/>
+            <main className={s['blog-index__body']}>
+                <div className={s['blog-index__search']}>
+                    <h1 className={'blog-h1--primary'}>Все статьи</h1>
                     <SearchInput
                         value={searchValue}
                         onChange={e => onSearch(e.target.value)}
                     />
                 </div>
-                <section className={s['app-wrapper__list']}>
+                <section className={s['blog-index__list']}>
                     {
                         items.map(it => <BlogListItem key={it.id} {...it}/>)
                     }

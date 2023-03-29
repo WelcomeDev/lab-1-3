@@ -1,0 +1,28 @@
+@import 'src/styles/index';
+
+.note {
+  @include with-default-border-radius;
+
+  padding: 24px 16px;
+  background-color: $blog-secondary;
+}
+
+.blockquote,
+.note {
+  @include vertical-offset(12px, false, true);
+  @include column-flex(12px);
+}
+
+.blockquote__wrapper {
+  @include vertical-offset(12px);
+  @include flex(16px);
+
+  &:before {
+    @include max-rounding;
+
+    content: ' ';
+    height: 100%;
+    background-color: $blog-primary;;
+    width: 2px;
+  }
+}

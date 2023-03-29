@@ -1,0 +1,21 @@
+@import 'src/styles/index';
+
+.ul {
+  @include column-flex(24px);
+  @include vertical-offset(12px);
+
+  .li {
+    @include flex(8px);
+
+    font: inherit;
+
+    &:before {
+      @include strict-size(6px);
+
+      margin-top: 6px;
+      border-radius: 50%;
+      background-color: $blog-primary;
+      content: ' ';
+    }
+  }
+}

@@ -23,7 +23,7 @@ export function Header({ className }: { className?: string }) {
                     {
                         links.map(it => (
                             <li key={it.url}>
-                                <a href={it.url} className={'desktop-body-1--accent'}>
+                                <a href={it.url} className={'blog-body--accent'}>
                                     {it.title}
                                 </a>
                             </li>

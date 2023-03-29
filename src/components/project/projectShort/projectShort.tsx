@@ -13,7 +13,7 @@ export function ProjectShort(props: ProjectShortProps) {
                 src={coverUrl}
                 alt={title}
             />
-            <p className={'desktop-body-1--primary'}>
+            <p className={'blog-body--primary'}>
                 {title}
             </p>
         </div>

@@ -2,13 +2,18 @@
   "name": "lab-1-3",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "--dev": "vite",
+    "--build": "tsc && vite build",
+    "--preview": "vite preview"
   },
   "dependencies": {
+    "@ws-serenity/js-prototypes": "1.4.0",
+    "@ws-serenity/react-hooks": "3.0.0",
+    "@ws-serenity/react-text-inputs": "3.0.0",
     "clsx": "^1.2.1",
     "date-fns": "^2.29.3",
     "react": "^18.2.0",
@@ -16,9 +21,14 @@
     "sass": "^1.60.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "7.0.0",
+    "@types/node": "^18.15.11",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
+    "gray-matter": "^4.0.3",
+    "next": "13.2.4",
+    "next-mdx-remote": "^4.4.1",
     "typescript": "^4.9.3",
     "vite": "^4.2.0",
     "vite-plugin-svgr": "^2.4.0"

@@ -1,0 +1,15 @@
+@import 'src/styles/index';
+
+.container {
+  @include vertical-offset(32px);
+  @include column-flex(16px);
+
+  .image {
+    @include with-default-border-radius;
+    @include image-fit-parent;
+
+    &__caption {
+      text-align: center;
+    }
+  }
+}
