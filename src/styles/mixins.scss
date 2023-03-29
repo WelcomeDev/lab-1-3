@@ -1,0 +1,56 @@
+@mixin with-default-border-radius() {
+  border-radius: 6px;
+}
+
+@mixin stretch-screen() {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin max-width($resolution) {
+  @media (max-width: #{$resolution}px) {
+    @content;
+  }
+}
+
+@mixin min-width($resolution) {
+  @media (min-width: #{$resolution}px) {
+    @content;
+  }
+}
+
+@mixin column-flex($gap:0) {
+  display: flex;
+  flex-direction: column;
+  row-gap: $gap;
+}
+
+@mixin center-by-margin() {
+  margin: 0 auto;
+}
+
+@mixin flex($gap:0) {
+  display: flex;
+  column-gap: $gap;
+}
+
+@mixin align-center-row-flex($gap:0) {
+  display: flex;
+  align-items: center;
+  column-gap: $gap;
+}
+
+@mixin image-fit-parent() {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@mixin strict-size($size) {
+  min-width: $size;
+  max-width: $size;
+  min-height: $size;
+  max-height: $size;
+}

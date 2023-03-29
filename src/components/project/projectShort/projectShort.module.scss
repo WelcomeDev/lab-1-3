@@ -1,0 +1,11 @@
+@import 'src/styles/index';
+
+.project {
+  @include flex(4px);
+
+  &__icon {
+    @include strict-size(24px);
+
+    border-radius: 50%;
+  }
+}

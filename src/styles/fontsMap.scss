@@ -1,0 +1,66 @@
+@import 'fontsMapRaw';
+@import './colors/map';
+
+$fonts: 'desktop-subtitle', 'desktop-body-1', 'mobile-body-1', 'desktop-h1';
+
+@each $font in $fonts {
+  .#{$font} {
+    @extend %#{$font};
+
+    &--primary {
+      @extend %#{$font};
+
+      color: $blog-content-1;
+    }
+
+    &--secondary {
+      @extend %#{$font};
+
+      color: $blog-content-2;
+    }
+
+    &--ternary {
+      @extend %#{$font};
+
+      color: $blog-content-3;
+    }
+
+    &--accent {
+      @extend %#{$font};
+
+      color: $blog-primary;
+    }
+  }
+}
+
+//.desktop-subtitle {
+//  @extend %desktop-subtitle;
+//
+//  &--black {
+//
+//  }
+//
+//  &--secondary {
+//
+//  }
+//
+//  &--terinary {
+//
+//  }
+//}
+//
+//.desktop-body-1 {
+//  font-size: 16px;
+//  line-height: 20px;
+//}
+//
+//.mobile-body-1 {
+//  font-size: 14px;
+//  line-height: 18px;
+//}
+//
+//.desktop-h1 {
+//  font-size: 50px;
+//  line-height: 50px;
+//  letter-spacing: -0.03em;
+//}

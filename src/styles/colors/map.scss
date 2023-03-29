@@ -1,0 +1,15 @@
+@use 'landing';
+
+$blog-content-1: var(--blog-content-1);
+$blog-content-2: var(--blog-content-2);
+$blog-content-3: var(--blog-content-3);
+$blog-background-1: var(--blog-background-1);
+$blog-background-2: var(--blog-background-2);
+$blog-primary: var(--blog-primary);
+$blog-on-primary: var(--blog-on-primary);
+$blog-secondary: var(--blog-secondary);
+$blog-on-secondary: var(--blog-on-secondary);
+$blog-outcast: var(--blog-outcast);
+$blog-on-outcast: var(--blog-on-outcast);
+$const-white: landing.$const-white;
+$const-black: landing.$const-black;

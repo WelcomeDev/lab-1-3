@@ -1,0 +1,16 @@
+@import 'src/styles/index';
+
+.blog-list-item {
+  @include column-flex(16px);
+
+  &__cover {
+    @include with-default-border-radius;
+    @include image-fit-parent;
+  }
+
+  &__footer {
+    @include flex;
+
+    justify-content: space-between;
+  }
+}

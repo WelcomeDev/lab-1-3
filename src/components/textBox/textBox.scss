@@ -1,0 +1,45 @@
+.ws-text-box {
+  display: grid;
+  grid-template-areas:
+    'label input'
+    '- error';
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(2, auto);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  &--top-label {
+    grid-template-areas:
+      'label'
+      'input'
+      'error';
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+  }
+
+  &__field-wrapper {
+    grid-area: input;
+    display: flex;
+  }
+
+  &:not(.ws-text-box--has-icons) {
+    .ws-text-box__field {
+      grid-area: input;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  &__label {
+    grid-area: label;
+    width: fit-content;
+  }
+
+  &__error {
+    grid-area: error;
+  }
+}

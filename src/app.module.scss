@@ -1,0 +1,34 @@
+@import './styles/index';
+
+.app-wrapper {
+  @include column-flex(32px);
+
+  height: 100%;
+
+  &__header, &__body {
+    @include center-by-margin;
+
+    padding-left: 128px;
+    padding-right: 128px;
+  }
+
+  &__body {
+    @include column-flex(48px);
+
+    width: 100%;
+    padding-bottom: 32px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 48px 32px;
+  }
+
+  &__search {
+    @include flex;
+
+    justify-content: space-between;
+  }
+}

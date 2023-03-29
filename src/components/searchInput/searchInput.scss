@@ -1,0 +1,31 @@
+@import 'src/styles/index';
+
+.search-input {
+  @include with-default-border-radius;
+
+  background-color: $blog-background-2;
+  border: 1px solid transparent;
+  width: 320px;
+  padding: 10px 16px;
+
+  &:focus-within, &:hover {
+    border-color: $blog-primary;
+  }
+
+  .ws-text-box__field-wrapper {
+    @include flex(4px);
+
+    label {
+      max-height: 24px;
+    }
+
+    svg {
+      fill: $blog-content-2;
+    }
+  }
+
+  .ws-text-box__field {
+    background: transparent;
+    font: inherit;
+  }
+}
