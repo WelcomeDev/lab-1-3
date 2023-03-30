@@ -14,6 +14,7 @@
     "@ws-serenity/js-prototypes": "1.4.0",
     "@ws-serenity/react-hooks": "3.0.0",
     "@ws-serenity/react-text-inputs": "3.0.0",
+    "@ws-serenity/throw-error": "^1.1.0",
     "clsx": "^1.2.1",
     "date-fns": "^2.29.3",
     "react": "^18.2.0",

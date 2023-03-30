@@ -10,6 +10,10 @@ import { Blockquote, Cite } from './note/blockquote';
 import { Anchor } from './a/anchor';
 import { Video } from './video/video';
 import { CollapsableSection } from '../collabsableSection/collapsableSection';
+import { BlogItemModel } from '../../data/blogList';
+import { ProjectWithDescription } from '../project/projectWithDescription/projectWithDescription';
+import { SeparationLine } from '../project/separationLine/separationLine';
+import { ShareLink, ShareTelegram, ShareVk } from './share/share';
 
 const components: MDXComponents = {
     Note,
@@ -69,44 +73,54 @@ const components: MDXComponents = {
     },
 };
 
-export function Post({ mdxSource }: { mdxSource: any }) {
+export interface PostProps {
+    mdxSource: any;
+    blogMeta: Omit<BlogItemModel, 'content'>;
+}
+
+export function Post({ mdxSource, blogMeta }: PostProps) {
     return (
         <div className={s['post']}>
-            <section className={s['post__project']}>
-                <CollapsableSection label={'Hello'}>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit
-                        urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
-                        Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non
-                        suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit
-                        amet.
+           {/* todo: это нужно вынести в отдельный компонент. img и video нужно оборачивать в div, чтобы был border-radius*/}
+           <div className={s['image-wrapper']}>
+               <img
+                   className={s['post__image']}
+                   src={blogMeta.coverUrl}
+                   alt={blogMeta.title}
+               />
+           </div>
+            <div className={s['post__body']}>
+                <aside className={s['post__aside']}>
+                    <ProjectWithDescription
+                        {...blogMeta.project}
+                    />
+                    <p className={'blog-caption--ternary'}>
+                        {blogMeta.project.longDescription}
                     </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit
-                        urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
-                        Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non
-                        suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit
-                        amet.
+                    <SeparationLine/>
+                    <p className={'blog-caption--secondary'}>
+                        Share this article:
                     </p>
-                </CollapsableSection>
-            </section>
-            <section className={s['post__article-wrapper']}>
-                <header className={s['post__header']}>
-                    <Heading1>
-                        Почему вам не следует опасаться восстания машин... В ближайшие 10 лет
-                    </Heading1>
-                    <Paragraph>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit
-                        urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
-                        Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non
-                        suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit
-                        amet.
-                    </Paragraph>
-                </header>
-                <article className={s['post__content']}>
-                    <MDXRemote {...mdxSource} components={components}/>
-                </article>
-            </section>
+                    <div className={s['post__share-list']}>
+                        <ShareTelegram/>
+                        <ShareVk/>
+                        <ShareLink/>
+                    </div>
+                </aside>
+                <section className={s['post__article-wrapper']}>
+                    <header className={s['post__header']}>
+                        <Heading1>
+                            {blogMeta.title}
+                        </Heading1>
+                        <Paragraph>
+                            {blogMeta.description}
+                        </Paragraph>
+                    </header>
+                    <article className={s['post__content']}>
+                        <MDXRemote {...mdxSource} components={components}/>
+                    </article>
+                </section>
+            </div>
         </div>
     );
 }

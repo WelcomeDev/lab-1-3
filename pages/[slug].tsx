@@ -5,9 +5,9 @@ import * as fs from 'fs';
 import path from 'path';
 import { Post } from '../src/components/article/post';
 
-export default function BlogPostPage({ mdxSource }: any) {
+export default function BlogPostPage({ meta, mdxSource }: any) {
     return (
-        <Post mdxSource={mdxSource}/>
+        <Post blogMeta={meta} mdxSource={mdxSource}/>
     );
 }
 
@@ -25,13 +25,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const mdFile = fs.readFileSync(path.join('content', `${params?.slug}.md`));
 
-    const { /*data: meta,*/ content } = matter(mdFile);
+    const { data: meta, content } = matter(mdFile);
 
     const mdxSource = await serialize(content);
 
+    console.log('meta', meta);
+
     return {
         props: {
-            // meta,
+            meta,
             mdxSource,
         },
         revalidate: 10,

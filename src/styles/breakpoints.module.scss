@@ -1,0 +1,8 @@
+@import './breakpoints';
+
+:export {
+  mobile: $mobile;
+  tablet: $tablet;
+  laptop: $laptop;
+  desktop: $desktop;
+}

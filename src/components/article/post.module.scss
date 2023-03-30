@@ -1,19 +1,45 @@
 @import 'src/styles/index';
 
 .post {
-  @include flex(72px);
+  @include column-flex(48px);
 
-  padding: 0 128px;
-  justify-content: space-between;
+  .image-wrapper {
+    padding: 0 128px;
+    border-radius: 12px;
+  }
+
+  &__image {
+    @include image-fit-parent;
+
+    border-radius: 12px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__body {
+    @include flex(72px);
+
+    padding: 0 128px;
+    justify-content: space-between;
+  }
 
   &__article-wrapper,
   &__content {
     max-width: 700px;
   }
 
+  &__aside {
+    max-width: 240px;
+  }
+
   &__header,
-  &__content {
-    @include column-flex(16px)
+  &__content,
+  &__aside {
+    @include column-flex(16px);
+  }
+
+  &__share-list {
+    @include flex(16px);
   }
 
   &__article-wrapper {

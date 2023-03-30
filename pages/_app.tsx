@@ -6,11 +6,14 @@ import '../src/styles/colors/blog.scss';
 import { AppProps } from 'next/app';
 import clsx from 'clsx';
 import './appWrapper.scss';
+import { CurrentPlatformContextProvider } from '../src/hooks/useCurrentPlatformContext';
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
-        <div className={clsx('theme', 'app-wrapper')}>
-            <Component {...pageProps}/>
-        </div>
+        <CurrentPlatformContextProvider>
+            <div className={clsx('theme', 'app-wrapper')}>
+                <Component {...pageProps}/>
+            </div>
+        </CurrentPlatformContextProvider>
     );
 }

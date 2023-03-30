@@ -1,0 +1,15 @@
+@import 'src/styles/index';
+
+.project-with-description {
+  @include flex(8px);
+
+  align-items: center;
+
+  &__image {
+    @include strict-size(32px);
+  }
+
+  &__text {
+    @include column-flex;
+  }
+}
