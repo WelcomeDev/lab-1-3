@@ -9,10 +9,12 @@ import { Note } from './note/note';
 import { Blockquote, Cite } from './note/blockquote';
 import { Anchor } from './a/anchor';
 import { Video } from './video/video';
+import { CollapsableSection } from '../collabsableSection/collapsableSection';
 
 const components: MDXComponents = {
     Note,
     Video,
+    CollapsableSection,
     h1: ({ children }) => <Heading1>{children}</Heading1>,
     h2: ({ children }) => <Heading2>{children}</Heading2>,
     h3: ({ children }) => <Heading3>{children}</Heading3>,
@@ -71,7 +73,22 @@ export function Post({ mdxSource }: { mdxSource: any }) {
     return (
         <div className={s['post']}>
             <section className={s['post__project']}>
-
+                <CollapsableSection label={'Hello'}>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit
+                        urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
+                        Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non
+                        suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit
+                        amet.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit
+                        urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
+                        Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non
+                        suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit
+                        amet.
+                    </p>
+                </CollapsableSection>
             </section>
             <section className={s['post__article-wrapper']}>
                 <header className={s['post__header']}>

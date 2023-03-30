@@ -1,0 +1,17 @@
+@import 'src/styles/index';
+
+.text-icon {
+  @include flex(4px);
+
+  align-items: center;
+  cursor: pointer;
+
+  .icon {
+    fill: $blog-primary;
+    transition: transform 250ms ease-in-out;
+
+    &--rotated {
+      transform: rotate(180deg);
+    }
+  }
+}

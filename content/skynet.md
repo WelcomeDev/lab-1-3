@@ -80,18 +80,24 @@ console.log('Long text:', 'Curabitur pellentesque nibh nibh, at maximus ante fer
 <Next source={myMdxSource}/>;
 ```
 
+```
+console.log('this is done using MDX!');
+console.log('Long text:', 'Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales:');
+
+<Next source={myMdxSource}/>;
+```
+
 Donec molestie lorem vel varius condimentum. Phasellus at condimentum erat. Praesent eu ullamcorper elit. Fusce tempor
 neque neque, commodo mattis sapien finibus et. Proin venenatis nisl dui, eget posuere justo bibendum vel.
 
-<details>
-<summary>Summary</summary>
+<CollapsableSection label="Summary">
 Donec molestie lorem vel varius condimentum. Phasellus at condimentum erat. Praesent eu ullamcorper elit. Fusce tempor
-neque neque, commodo mattis sapien finibus et. 
+neque neque, commodo mattis sapien finibus et.
 
 Proin venenatis nisl dui, eget posuere justo bibendum vel.
 Donec molestie lorem vel varius condimentum. Phasellus at condimentum erat. Praesent eu ullamcorper elit. Fusce tempor
 neque neque, commodo mattis sapien finibus et. Proin venenatis nisl dui, eget posuere justo bibendum vel.
-</details>
+</CollapsableSection>
 
 <Video
 poster="https://wicando.dev.thewhite.ru/videos/main-video-demo-preview.jpeg"

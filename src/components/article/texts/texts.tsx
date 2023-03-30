@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import s from './text.module.scss';
 import { TextProps } from '../textProps';
 import { ReactNode } from 'react';
+import { CollapsableSection } from '../../collabsableSection/collapsableSection';
 
 export const Heading1 = ({ children, className }: TextProps) => (
     <h1 className={clsx(s['heading-1'], 'blog-h1', className)}>
@@ -57,10 +58,19 @@ export function Marker({ children, className }: TextProps) {
 
 export function CodeBlock({ language, children }: { children: ReactNode, language?: string }) {
     return (
-        <div className={s['code-block__wrapper']}>
-            <code className={clsx(s['code-block'], 'blog-body--secondary', language)}>
-                {<pre>{children}</pre>}
-            </code>
-        </div>
+        language ? (
+                <code className={clsx(s['code-block'], 'blog-body--secondary', language)}>
+                    <CollapsableSection label={language}>
+                        {<pre>{children}</pre>}
+                    </CollapsableSection>
+                </code>
+            )
+            : (
+                <div className={s['code-block__wrapper']}>
+                    <code className={clsx(s['code-block'], s['code-block--no-collapse'], 'blog-body--secondary', language)}>
+                        {<pre>{children}</pre>}
+                    </code>
+                </div>
+            )
     );
 }

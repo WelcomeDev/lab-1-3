@@ -1,0 +1,24 @@
+@import 'src/styles/index';
+
+.collapsable-section {
+  @include with-default-border-radius;
+
+  background-color: $blog-background-2;
+  padding: 16px;
+
+  &__body {
+    @include custom-scrollbar('float');
+
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding-top: 0;
+    max-height: 0;
+    transition: 250ms ease-in-out;
+    transition-property: max-height, padding-top;
+
+    &--open {
+      max-height: var(--content-height);
+      padding-top: 16px;
+    }
+  }
+}

@@ -41,7 +41,10 @@ $textStyleArray: (
 
   display: block;
   overflow: auto;
-  padding: 16px;
+
+  &--no-collapse {
+    padding: 16px;
+  }
 
   code {
     padding: unset;
