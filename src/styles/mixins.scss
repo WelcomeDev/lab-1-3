@@ -21,8 +21,8 @@
   }
 }
 
-@mixin stretch-screen() {
-  position: absolute;
+@mixin stretch($isAbsolute:false) {
+  position: if($isAbsolute, absolute, relative);
   top: 0;
   right: 0;
   bottom: 0;
@@ -48,7 +48,8 @@
 }
 
 @mixin center-by-margin() {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @mixin flex($gap:0) {
@@ -63,6 +64,8 @@
 }
 
 @mixin image-fit-parent() {
+  width: auto;
+  height: auto;
   max-width: 100%;
   max-height: 100%;
 }
@@ -74,6 +77,6 @@
   max-height: $size;
 }
 
-@mixin max-rounding(){
+@mixin max-rounding() {
   border-radius: 9999px;
 }

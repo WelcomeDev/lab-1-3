@@ -35,8 +35,8 @@ Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis
 id. Praesent lorem orci, mattis non efficitur id, ultricies vel nibh.
 
 > Мой кот, когда выходит из лотка, садится за углом и смотрит, что мы делаем с его какашками.
-Я в институте делал так же, когда сдавал свои лабы. [Источник](https://www.anekdot.ru/)
->  
+> Я в институте делал так же, когда сдавал свои лабы. [Источник](https://www.anekdot.ru/)
+>
 ><cite>Умный чел</cite>
 
 Proin sem risus, convallis quis volutpat et, sollicitudin at urna. Duis molestie odio orci, vel auctor velit posuere
@@ -83,4 +83,24 @@ console.log('Long text:', 'Curabitur pellentesque nibh nibh, at maximus ante fer
 Donec molestie lorem vel varius condimentum. Phasellus at condimentum erat. Praesent eu ullamcorper elit. Fusce tempor
 neque neque, commodo mattis sapien finibus et. Proin venenatis nisl dui, eget posuere justo bibendum vel.
 
-// tood: collapseable section
+<details>
+<summary>Summary</summary>
+Donec molestie lorem vel varius condimentum. Phasellus at condimentum erat. Praesent eu ullamcorper elit. Fusce tempor
+neque neque, commodo mattis sapien finibus et. 
+
+Proin venenatis nisl dui, eget posuere justo bibendum vel.
+Donec molestie lorem vel varius condimentum. Phasellus at condimentum erat. Praesent eu ullamcorper elit. Fusce tempor
+neque neque, commodo mattis sapien finibus et. Proin venenatis nisl dui, eget posuere justo bibendum vel.
+</details>
+
+<Video
+poster="https://wicando.dev.thewhite.ru/videos/main-video-demo-preview.jpeg"
+src="https://wicando.dev.thewhite.ru/videos/main-video-demo.mp4"
+/>
+
+<Video
+src="https://d21ozv67drxbfu.cloudfront.net/appietoday.test/media/2017/09/04/asset-1175875-1504515710530864.mp4"
+poster="empty"
+/>
+
+![vertical image](https://wicando.dev.thewhite.ru/videos/main-video-demo-preview.jpeg)

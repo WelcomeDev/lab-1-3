@@ -8,9 +8,11 @@ import { Li, Ul } from './ul/ul';
 import { Note } from './note/note';
 import { Blockquote, Cite } from './note/blockquote';
 import { Anchor } from './a/anchor';
+import { Video } from './video/video';
 
 const components: MDXComponents = {
     Note,
+    Video,
     h1: ({ children }) => <Heading1>{children}</Heading1>,
     h2: ({ children }) => <Heading2>{children}</Heading2>,
     h3: ({ children }) => <Heading3>{children}</Heading3>,
@@ -59,6 +61,9 @@ const components: MDXComponents = {
     a: ({ children, href }) => {
         // @ts-ignore
         return <Anchor href={href}>{children}</Anchor>;
+    },
+    details: ({ children }) => {
+        return <>{children}</>;
     },
 };
 

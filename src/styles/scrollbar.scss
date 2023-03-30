@@ -6,11 +6,13 @@ $thin-margin-right: 6px;
 $thin-result-width: $default-width + $thin-margin-right;
 $widths: ('default':$default-width, 'float':$thin-result-width);
 
+$grayscale-content-3: #777777;
+$grayscale-line: #3e3e3e;
+
 // types: 'default', 'float'
 @mixin custom-scrollbar($type:'default') {
   // noinspection CssUnknownProperty
-  //scrollbar-color: $grayscale-content-3 $grayscale-line;
-  scrollbar-color: red blue;
+  scrollbar-color: $grayscale-content-3 $grayscale-line;
   // noinspection CssUnknownProperty
   scrollbar-width: thin;
 
@@ -25,7 +27,7 @@ $widths: ('default':$default-width, 'float':$thin-result-width);
     @if ($type == 'default') {
       @include max-rounding;
 
-      background-color: blue;
+      background-color: $grayscale-line;
     }
   }
 
@@ -33,7 +35,7 @@ $widths: ('default':$default-width, 'float':$thin-result-width);
     @include max-rounding;
 
     background-clip: padding-box;
-    background-color: red;
+    background-color: $grayscale-content-3;
 
     @if ($type == 'float') {
       border: calc(#{$thin-margin-right} / 2) solid rgba(0, 0, 0, 0);

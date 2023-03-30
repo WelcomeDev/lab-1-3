@@ -8,6 +8,13 @@
     @include with-default-border-radius;
     @include image-fit-parent;
 
+    max-height: 370px;
+    object-fit: cover;
+
+    &--vertical {
+      object-fit: contain;
+    }
+
     &__caption {
       text-align: center;
     }
