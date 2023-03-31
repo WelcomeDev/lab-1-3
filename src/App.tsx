@@ -3,10 +3,16 @@ import s from './app.module.scss';
 import { BlogListItem } from './components/blogListItem/blogListItem';
 import { SearchInput } from './components/searchInput/searchInput';
 import { useOnSearch } from './hooks/useOnSearch';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { BlogListItemModel } from './data/blogList';
+import { getStaticProps } from '../pages';
 
-function App() {
+function App({ postList }: InferGetStaticPropsType<typeof getStaticProps>) {
 
-    const { items, onSearch, searchValue } = useOnSearch();
+    const { items, onSearch, searchValue } = useOnSearch(postList);
 
     return (
         <div className={s['blog-index']}>
