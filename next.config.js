@@ -19,7 +19,7 @@ const nextConfig = {
             {
                 test: /\.svg$/i,
                 issuer: /\.[jt]sx?$/,
-                resourceQuery: { not: /url/ }, // exclude if *.svg?url
+                resourceQuery: {not: /url/}, // exclude if *.svg?url
                 use: [{loader: '@svgr/webpack', options: {svgo: false}}],
             },
         );
@@ -28,11 +28,11 @@ const nextConfig = {
 
         // Правила для использования обычных стилей помимо CSS modules, для покраски SVG и вложенных классов стилей
         config.module.rules.forEach((rule) => {
-            const { oneOf } = rule;
+            const {oneOf} = rule;
             if (oneOf) {
                 oneOf.forEach((one) => {
                     if (!`${one.issuer?.and}`.includes('_app')) return;
-                    one.issuer.and = [ path.resolve(__dirname) ];
+                    one.issuer.and = [path.resolve(__dirname)];
                 });
             }
         });
@@ -41,7 +41,11 @@ const nextConfig = {
     },
     output: 'standalone',
     images: {
-        domains: [ 'raw.githubusercontent.com' ],
+        domains: [
+            'raw.githubusercontent.com',
+            'upload.wikimedia.org',
+            'wicando.dev.thewhite.ru'
+        ],
     },
 };
 

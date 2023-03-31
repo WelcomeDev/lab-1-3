@@ -2,6 +2,9 @@
 
 .post {
   @include column-flex(48px);
+  @include center-by-margin;
+
+  max-width: #{$desktop}px;
 
   .image-wrapper {
     padding: 0 128px;

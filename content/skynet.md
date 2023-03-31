@@ -112,13 +112,6 @@ neque neque, commodo mattis sapien finibus et. Proin venenatis nisl dui, eget po
 </CollapsableSection>
 
 <Video
-poster="https://wicando.dev.thewhite.ru/videos/main-video-demo-preview.jpeg"
-src="https://wicando.dev.thewhite.ru/videos/main-video-demo.mp4"
-/>
-
-<Video
 src="https://d21ozv67drxbfu.cloudfront.net/appietoday.test/media/2017/09/04/asset-1175875-1504515710530864.mp4"
 poster="empty"
 />
-
-![vertical image](https://wicando.dev.thewhite.ru/videos/main-video-demo-preview.jpeg)
