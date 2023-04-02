@@ -5,13 +5,15 @@ import s from './app.module.scss';
 import { BlogListItem } from './components/blogListItem/blogListItem';
 import { SearchInput } from './components/searchInput/searchInput';
 import { useOnSearch } from './hooks/useOnSearch';
+import { useThemeContext } from './hooks/useThemeContext';
 
 function App() {
 
     const { items, onSearch, searchValue } = useOnSearch();
+    const { theme } = useThemeContext();
 
     return (
-        <div className={clsx(s['app-wrapper'], 'theme')}>
+        <div className={clsx(s['app-wrapper'], `${theme}-theme`)}>
             <Header className={s['app-wrapper__header']}/>
             <main className={s['app-wrapper__body']}>
                 <div className={s['app-wrapper__search']}>

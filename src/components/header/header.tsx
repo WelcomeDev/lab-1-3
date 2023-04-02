@@ -1,5 +1,7 @@
 import s from './header.module.scss';
 import clsx from 'clsx';
+import { Switch } from '../switch/switch';
+import { useThemeContext } from '../../hooks/useThemeContext';
 
 const links: { title: string, url: string }[] = [
     {
@@ -8,11 +10,14 @@ const links: { title: string, url: string }[] = [
     },
     {
         title: 'React',
-        url: 'https://react.dev/'
-    }
+        url: 'https://react.dev/',
+    },
 ];
 
 export function Header({ className }: { className?: string }) {
+
+    const { toggle } = useThemeContext();
+
     return (
         <header className={clsx(s['header'], className)}>
             <a href="https://vitejs.dev" target="_blank">
@@ -20,6 +25,7 @@ export function Header({ className }: { className?: string }) {
             </a>
             <nav>
                 <ul className={s['header__nav']}>
+                    <Switch onClick={toggle}/>
                     {
                         links.map(it => (
                             <li key={it.url}>

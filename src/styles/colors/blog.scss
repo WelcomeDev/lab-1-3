@@ -1,12 +1,26 @@
 @import 'landing';
 
-.theme {
+.light-theme {
   --blog-content-1: #{$const-black};
   --blog-content-2: #{$content-2-grayscale};
   --blog-content-3: #{$content-3-grayscale};
   --blog-background-1: #{$const-white};
   --blog-background-2: #{$bg-2-grayscale};
   --blog-primary: #{$base-blue};
+  --blog-on-primary: #{$const-white};
+  --blog-secondary: #{$bg-blue};
+  --blog-on-secondary: #{$const-black};
+  --blog-outcast: #{$content-2-grayscale};
+  --blog-on-outcast: #{$const-white};
+}
+
+.dark-theme {
+  --blog-content-1: #e8e8e8;
+  --blog-content-2: #bbbbbb;
+  --blog-content-3: #272727;
+  --blog-background-1: #1c1c1c;
+  --blog-background-2: #232323;
+  --blog-primary: #168fff;
   --blog-on-primary: #{$const-white};
   --blog-secondary: #{$bg-blue};
   --blog-on-secondary: #{$const-black};
